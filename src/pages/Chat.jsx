@@ -287,6 +287,7 @@ const Chat = ({chatId,user}) => {
                           bgcolor:"error.dark"
                         }
                       }}
+                     onClick={submitHandler}
                     >
                         <SendIcon/>
                     </IconButton>
