@@ -20,6 +20,7 @@ import {
   Logout as LogoutIcon,
   Notifications as NotificationIcon,
 } from "@mui/icons-material";
+import SmartToyIcon from "@mui/icons-material/SmartToy";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -77,7 +78,12 @@ const Header = () => {
 
   };
   
-
+   const handleScrollDown = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth", // Optional smooth scrolling
+    });
+  };
   const navigateToGroup = () => navigate("/groups");
   return (
     <>
@@ -117,6 +123,30 @@ const Header = () => {
             <Box sx={{ flexGrow: 1 }} />
 
             <Box>
+               <Tooltip title="Talk With gullu">
+                <IconButton
+                  color="inherit"
+                  size="large"
+                  onClick={handleScrollDown}
+                  sx={{
+                    bgcolor: "black", // Background color of the IconButton
+                    color: "#ea7070", // Color of the icon inside the IconButton
+                    width: "11rem",
+                    borderRadius: "2rem",
+                    "&:hover": {
+                      bgcolor: "black", // Hover background color
+                    },
+                    marginLeft: "2px", // Center align the IconButton
+                  }}
+                >
+                  <SmartToyIcon />
+                  <Typography variant="body2" color={"white"} sx={{
+                    marginLeft:"0.5rem"
+                  }}>
+                    Talk With gullu
+                  </Typography>
+                </IconButton>
+              </Tooltip>
               <Tooltip title="Search people">
                 {/* <TextField
                   variant="outlined"
