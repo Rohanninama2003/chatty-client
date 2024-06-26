@@ -121,14 +121,17 @@ const Header = () => {
             </Box>
 
             <Box sx={{ flexGrow: 1 }} />
-
-            <Box>
-               <Tooltip title="Talk With gullu">
+               <Box 
+                sx={{
+                  display: { xs: "none", sm: "block" },
+              }}>
+                   <Tooltip title="Talk With gullu">
                 <IconButton
                   color="inherit"
                   size="large"
                   onClick={handleScrollDown}
                   sx={{
+                    
                     bgcolor: "black", // Background color of the IconButton
                     color: "#ea7070", // Color of the icon inside the IconButton
                     width: "11rem",
@@ -147,6 +150,9 @@ const Header = () => {
                   </Typography>
                 </IconButton>
               </Tooltip>
+              </Box>
+            <Box>
+             
               <Tooltip title="Search people">
                 {/* <TextField
                   variant="outlined"
